@@ -1,5 +1,5 @@
 :root{
-    --main-color-1: rgba(248, 248, 248, 0.95);
+    --main-color-1: white;
     --main-color-2: rgba(51, 51, 51, 0.8);
     --introduction-gold: #ed9533;
 
@@ -24,67 +24,53 @@ section {
     vertical-align: middle;
     width: 100%;
     height: 100vh;
-    min-height: 700px;
     margin: 0;
     background-color: var(--main-color-1);
 }
 
 h1 {
-    font-size: clamp(2rem, 10vw, 8rem);
     margin: 0;
     font-weight: 400;
     text-align: center;
 }
 
 h2 {
-    font-size: clamp(1.75rem, 6vw, 4.25rem);
     font-weight: 600;
     margin: 0;
     text-align: center;
 }
 
 .h2-big {
-    font-size: clamp(2rem, 7vw, 6rem);
     font-weight: 600;
     margin: 0;
 }
 
 h3 {
-    font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: 700;
     margin: 0;
     text-align: center;
 }
 
 .h3-big {
-    font-size: clamp(2.25rem, 3vw, 3rem);
     font-weight: 600;
     margin: 0;
 }
 
 p {
-    text-indent: 2rem;
-    line-height: 2rem;
     text-align: center;
 }
 
 p.small-text {
-    font-size: min(clamp(0.75rem, 1.25vw, 1.25rem),
-            clamp(0.75rem, 1.75vh, 1.25rem));
     font-weight: 300;
     margin: 0;
 }
 
 p.medium-text {
-    font-size: min(clamp(0.95rem, 1.5vw, 1.35rem),
-            clamp(0.95rem, 2vh, 1.35rem));
     font-weight: 300;
     margin: 0;
 }
 
 p.big-text {
-    font-size: min(clamp(1.05rem, 1.75vw, 1.5rem),
-        clamp(1rem, 2.25vh, 1.5rem));
     font-weight: 300;
     margin: 0;
 }
@@ -108,12 +94,12 @@ span {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: clamp(50px, 10vh, 75px);
-    width: clamp(550px, 88%, 100vw);
+    color: var(--main-color-1);
+    background-color: transparent;
+    padding: 0;
+    width: 88%;
     margin: 7.5vh 6% 0 6%;
     padding: 0;
-    color: var(--main-color-1);
-    background-color: rgba(0, 0 , 0, 0);
 }
 
 #header h3 {
@@ -126,7 +112,6 @@ span {
     position: absolute;
     right: 0;
     width: 60vw;
-    min-width: 300px;
 }
 
 #header ul {
@@ -141,11 +126,6 @@ span {
 
 #header li {
     float: right;
-    margin-left: clamp(20px, 3.2vw, 50px);
-}
-
-#header a[href="#explore"] {
-    display: none;
 }
 
 #header .nav-link {
@@ -157,7 +137,6 @@ span {
     cursor:pointer; 
     transition: all .2s ease-in-out;
 }
-
 
 #header .nav-link:hover {
     text-decoration:none !important; 
@@ -177,13 +156,11 @@ span {
 .waves-bottom {
     position: absolute;
     width: 100%;
-    height: clamp(100px, 10vh, 150px);
+    height: clamp(100px, 10vh, 150px); 
     background-color: transparent;
     fill: var(--main-color-1);
     bottom: 0;
-    --transform: translateY(-100%);
     z-index: 20;
-    
 }
 
 .waves-top {
@@ -261,7 +238,7 @@ span {
 
 .carousel-button:hover {
     color: rgba(255, 255, 255, .6);
-    background: linear-gradient(90deg, rgb(0, 0, 0, .2), rgba(255,255,255,0));
+    background: linear-gradient(90deg, rgb(0, 0, 0, .2), transparent);
 }
 
 .carousel-button.prev {
@@ -280,7 +257,7 @@ span {
     justify-content: center;
 }
 
-#introduction .guide-card {
+.guide-card {
     display: flex;
     flex-wrap: wrap;  
     justify-content: center;
@@ -288,32 +265,30 @@ span {
     padding-top: 0;
 }
 
-#introduction .guide-card > div {
+.guide-card > div {
     display: block;
     width: 50%;
     white-space: nowrap;
     z-index: 7;
 }
 
-#introduction .guide-card h3,
-#introduction .guide-card .surname {
+.guide-card h3,
+.guide-card .surname {
     text-align: left;
     color: var(--introduction-gold);
 }
 
-#introduction .guide-card h2,
-#introduction .guide-card p {
+.guide-card h2,
+.guide-card p {
     text-align: left;
 }
 
-#introduction .guide-card img {
-    width: clamp(250px, 27.5vw, 400px);
-    height: clamp(250px, 27.5vw, 400px);
+.guide-card img {
     border-radius: 100%;
     object-fit: contain;
 }
 
-#introduction .guide-description {
+.guide-description {
     margin: 2% var(--main-content-side-margin);
 }
 
@@ -325,18 +300,11 @@ span {
     position: absolute;
     top: 0; 
     height: 100%;
-    padding: 40px var(--main-content-side-margin);
     background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0));
     color: var(--main-color-1);
-    
-}
-
-.carousel .tour-description h2 {
-    margin: 2.5rem 0 7.5% 0;
 }
 
 .carousel .tour-description h3 {
-    margin-bottom: 15px;
     text-decoration: underline;
 }
 
@@ -346,9 +314,8 @@ span {
     flex-wrap: wrap;  
     justify-content: center;
     height: 75vh;
-    min-height: 700px;
 }
-
+    
 #additions .additions-header {
     margin: 0 var(--main-content-side-margin);
 }
@@ -366,26 +333,21 @@ span {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    margin: max(35px,10vh) var(--main-content-side-margin);
     padding: 0;
 }
 
 #additions .addition {
-    width: 25%;
+    width: 27.5%;
 }
 
 #additions .icon {
     display: flex;
     flex-direction: column;
-    width: clamp(75px, 10vw, 200px);
-    height: clamp(75px, 10vw, 200px);
-    margin: 0 auto 25px auto;
 }
 
 #additions .icon-description {
     width: 100%;
     text-indent: 0;
-    --text-align: left;
 }
 
 #contact {
@@ -395,14 +357,6 @@ span {
     justify-content: center;
     background-color: var(--introduction-gold);
     color: var(--main-color-1);
-}
-
-.contact-header {
-    width: 100%;
-}
-
-.contact-header > p {
-    margin: 0 0 35px 0;
 }
 
 #contact > .contact-contents {
@@ -416,26 +370,26 @@ span {
 #contact-form {
     display: flex;
     flex-direction: column;
-    width: 32.5vw;
-    min-width: 325px;
+    width: 45%;
+}
+
+.contact-header {
+    width: 100%;
+}
+
+.contact-header > p {
+    margin: 0;
 }
 
 #contact-form > input,
 #contact-form > #input-message {
     width: 100%;
-    height: 40px;
-    margin: 7.5px 0;
     border: none;
     box-sizing: border-box;
-    font-size: min(clamp(0.75rem, 1.25vw, 1.25rem),
-            clamp(0.75rem, 1.75vh, 1.25rem));
     font-family: inherit;
-    padding: 0 7.5px;
 }
 
 #contact-form > #input-message {
-    height: 17.5rem;
-    padding: 5px 10px;
     resize: none;
 }
 
@@ -445,11 +399,7 @@ span {
 }
 
 #contact-form > #input-submit {
-    width: 125px;
-    height: 65px;
-    font-size: 1.25rem;
     font-weight: 600;
-    margin: 10px 0 0 0;
     background-color: transparent;
     border: var(--main-color-1) 2px solid;
     color: var(--main-color-1);
@@ -469,7 +419,6 @@ span {
 
 #contact-details > h3 {
     text-align: left;
-    margin: 5px 0;
     font-weight: 500;
     font-style: italic;
 }
@@ -478,10 +427,8 @@ span {
     border-top: 2px solid var(--main-color-1);
     position: absolute;
     bottom: 0;
-    height: clamp(50px, 10vh, 75px);
-    width: clamp(550px, 88%, 100vw);
+    width: 88%;
     margin: 0 auto 0 auto;
-    padding-top: 20px;
     z-index: 90;
 }
 
@@ -502,13 +449,8 @@ span {
 
 #footer li {
     float: left;
-    margin-left: clamp(20px, 3.2vw, 50px);
 }
-
-#footer a[href="#contact"] {
-    display: none;
-}
-
+    
 #footer .nav-link {
     display: block;
     font-weight: 200;
@@ -523,4 +465,136 @@ span {
     text-decoration:none !important; 
     cursor:pointer;
     transform: scale(1.2);
+}
+
+@media (min-width: 1280px) {
+
+    section {
+        min-height: 750px;
+    }
+    
+    h1 {
+        font-size: 8rem;
+    }
+    
+    h2 {
+        font-size: 4.25rem;
+    }
+    
+    .h2-big {
+        font-size: 6rem;
+    }
+    
+    h3 {
+        font-size: 2rem;
+    }
+    
+    .h3-big {
+        font-size: 3rem;
+    }
+    
+    p {
+        text-indent: 2rem;
+        line-height: 2rem;
+    }
+    
+    p.small-text {
+        font-size: 1rem;
+    }
+    
+    p.medium-text {
+        font-size: 1.2rem;
+    }
+    
+    p.big-text {
+        font-size: 1.35rem;
+    }
+
+    a {
+        font-size: 1.25rem;
+    }
+    
+    #header {
+        height: 50px;
+    }
+    
+    #header li {
+        margin-left: 50px;
+    }
+    
+    #header a[href="#explore"] {
+        display: none;
+    }
+    
+    .guide-card img {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .carousel .tour-description {
+        padding: 40px var(--main-content-side-margin);
+    }
+    
+    .carousel .tour-description h2 {
+        margin: 2.5rem 0 1.5rem 0;
+    }
+    
+    .carousel .tour-description h3 {
+        margin-bottom: 15px;
+    }
+    
+    #additions {
+        min-height: 600px;
+    }
+    
+    #additions .additions {
+        margin: 45px var(--main-content-side-margin);
+    }
+    
+    #additions .icon {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 25px auto;
+    }
+    
+    .contact-header {
+        height: 150px;
+    }
+    
+    #contact-form > input,
+    #contact-form > #input-message {
+        height: 40px;
+        margin: 7.5px 0;
+        font-size: 1rem;
+        padding: 0 7.5px;
+    }
+    
+    #contact-form > #input-message {
+        height: 16rem;
+        padding: 5px 10px;
+    }
+    
+    #contact-form > #input-submit {
+        width: 100px;
+        height: 65px;
+        font-size: 1.25rem;
+        margin: 10px 0 0 0;
+    }
+    
+    #contact-details > h3 {
+        margin: 5px 0;
+    }
+    
+    #footer {
+        height: 55px;
+        padding-top: 10px;
+    }
+    
+    #footer li {
+        margin-left: 50px;
+    }
+    
+    #footer a[href="#contact"] {
+        display: none;
+    }
 }
