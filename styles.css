@@ -342,7 +342,6 @@ span {
 
 #additions .icon {
     display: flex;
-    flex-direction: column;
 }
 
 #additions .icon-description {
@@ -361,10 +360,10 @@ span {
 
 #contact > .contact-contents {
     display: flex;
+    justify-content: space-around;
     width: 100%;
     padding: 0 var(--secondary-content-side-margin);
     vertical-align: middle;
-    justify-content: space-around;
 }
 
 #contact-form {
@@ -467,7 +466,7 @@ span {
     transform: scale(1.2);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
 
     section {
         min-height: 750px;
@@ -515,11 +514,11 @@ span {
     }
     
     #header {
-        height: 50px;
+        height: 3rem;
     }
     
     #header li {
-        margin-left: 50px;
+        margin-left: 3rem;
     }
     
     #header a[href="#explore"] {
@@ -536,11 +535,11 @@ span {
     }
     
     .carousel .tour-description h2 {
-        margin: 2.5rem 0 1.5rem 0;
+        margin: 2.5rem 0 0.75rem 0;
     }
     
     .carousel .tour-description h3 {
-        margin-bottom: 15px;
+        margin-bottom: 0.3rem;
     }
     
     #additions {
@@ -552,8 +551,8 @@ span {
     }
     
     #additions .icon {
-        width: 150px;
-        height: 150px;
+        width: 125px;
+        height: 125px;
         margin: 0 auto 25px auto;
     }
     
@@ -588,6 +587,164 @@ span {
     #footer {
         height: 55px;
         padding-top: 10px;
+    }
+    
+    #footer li {
+        margin-left: 50px;
+    }
+    
+    #footer a[href="#contact"] {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    section {
+        min-height: 600px;
+    }
+    
+    h1 {
+        font-size: 6.5rem;
+    }
+    
+    h2 {
+        font-size: 2.75rem;
+    }
+    
+    .h2-big {
+        font-size: 3.25rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .h3-big {
+        font-size: 2.25rem;
+    }
+    
+    p {
+        text-indent: 1.5rem;
+        line-height: 1.5rem;
+    }
+    
+    p.small-text {
+        font-size: 0.75rem;
+    }
+    
+    p.medium-text {
+        font-size: 1rem;
+    }
+    
+    p.big-text {
+        font-size: 1.15rem;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+    
+    #header {
+        height: 3rem;
+    }
+    
+    #header li {
+        margin-left: 3rem;
+    }
+    
+    #header a[href="#explore"] {
+        display: none;
+    }
+    
+    .guide-card img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .carousel .tour-description {
+        padding: 40px var(--main-content-side-margin);
+    }
+    
+    .carousel .tour-description h2 {
+        margin: 2.5rem 0 1rem 0;
+    }
+    
+    .carousel .tour-description h3 {
+        margin-bottom: 0.3rem;
+    }
+    
+    #additions {
+        min-height: 480px;
+    }
+
+    #additions .additions-header {
+        height: 10%;
+    }
+
+    #additions .additions {
+        flex-direction: column;
+        justify-content: space-between;
+        list-style-type: none;
+        height: 75%;
+        width: auto;
+        margin: 0 var(--main-content-side-margin);
+    }
+
+    #additions .addition {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+    }
+    
+    #additions .icon {
+        width: 125px;
+        height: 125px;
+        margin: auto 25px auto 0;
+    }
+
+    #additions .icon-description {
+        margin: auto 0;
+        width: 75%;
+    }
+    
+    #contact .contact-header {
+        padding-top: 1rem;
+        height: 7rem;
+    }
+
+    #contact .contact-contents {
+        height: 400px;
+    }
+    
+    #contact-form > input,
+    #contact-form > #input-message {
+        height: 40px;
+        margin: 7.5px 0;
+        font-size: 1rem;
+        padding: 0 7.5px;
+    }
+    
+    #contact-form > #input-message {
+        height: 12rem;
+        padding: 5px 10px;
+    }
+    
+    #contact-form > #input-submit {
+        width: 90px;
+        height: 55px;
+        font-size: 1.25rem;
+        margin: 10px 0 0 0;
+    }
+    
+    #contact-details > h3 {
+        margin: 5px 0;
+    }
+    
+    #footer {
+        height: 3rem;
+        padding-top: 0.5rem;
     }
     
     #footer li {
