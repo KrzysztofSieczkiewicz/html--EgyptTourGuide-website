@@ -4,7 +4,7 @@
     --introduction-gold: #ed9533;
 
     --main-content-side-margin: 15%;
-    --secondary-content-side-margin: 7.5%;
+    --secondary-content-side-margin: 8.5%;
 }
 
 
@@ -293,16 +293,28 @@ span {
     margin: 0.5rem 0 0 0;
 }
 
-.carousel .tour-description {
-    position: absolute;
+.carousel .tour {
     top: 0; 
+    position: absolute;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0));
     color: var(--main-color-1);
 }
 
-.carousel .tour-description h3 {
+.carousel .tour h2 {
+    width: 100%;
+}
+
+.carousel .tour h3 {
+    width: 100%;
     text-decoration: underline;
+}
+
+.carousel .tour-description {
+    height: max-content;
+    margin: 5% 0 0 0;
 }
 
 #additions {
@@ -349,10 +361,18 @@ span {
 #contact {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;  
-    justify-content: center;
+    flex-wrap: wrap;
     background-color: var(--introduction-gold);
     color: var(--main-color-1);
+}
+
+.contact-header {
+    margin: 7.5% 0 0 0;
+    width: 100%;
+}
+
+.contact-header > p {
+    margin: 0;
 }
 
 #contact > .contact-contents {
@@ -360,21 +380,16 @@ span {
     justify-content: space-around;
     width: 100%;
     padding: 0 var(--secondary-content-side-margin);
+    padding-bottom: 3.5rem;
     vertical-align: middle;
+    flex-grow: 1;
 }
 
 #contact-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 45%;
-}
-
-.contact-header {
-    width: 100%;
-}
-
-.contact-header > p {
-    margin: 0;
 }
 
 #contact-form > input,
@@ -424,8 +439,10 @@ span {
     position: absolute;
     bottom: 0;
     width: 88%;
-    margin: 0 auto 0 auto;
+    margin: 0 11%;
     z-index: 90;
+    height: 3.5rem;
+    padding-top: 0.65rem;
 }
 
 #footer .navbar {
@@ -463,7 +480,7 @@ span {
     transform: scale(1.2);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
 
     section {
         min-height: 46.875rem;
@@ -527,15 +544,15 @@ span {
         height: 25rem;
     }
     
-    .carousel .tour-description {
+    .carousel .tour {
         padding: 2.5rem var(--main-content-side-margin);
     }
     
-    .carousel .tour-description h2 {
+    .carousel .tour h2 {
         margin: 2.5rem 0 0.5rem 0;
     }
     
-    .carousel .tour-description h3 {
+    .carousel .tour h3 {
         margin-bottom: 0.3rem;
     }
     
@@ -562,7 +579,7 @@ span {
     }
     
     #contact-form > #input-message {
-        height: 16rem;
+        height: 14rem;
         padding: 0.3rem 0.625rem;
     }
     
@@ -577,11 +594,6 @@ span {
         margin: 0.3rem 0;
     }
     
-    #footer {
-        height: 3.5rem;
-        padding-top: 0.625rem;
-    }
-    
     #footer li {
         margin-left: 3.125rem;
     }
@@ -591,30 +603,30 @@ span {
     }
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
 
     section {
-        min-height: 37.5rem;
+        min-height: 42.5rem;
     }
     
     h1 {
-        font-size: 6.5rem;
+        font-size: 7rem;
     }
     
     h2 {
-        font-size: 2.75rem;
-    }
-    
-    .h2-big {
         font-size: 3.25rem;
     }
     
+    .h2-big {
+        font-size: 3.75rem;
+    }
+    
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     
     .h3-big {
-        font-size: 2.25rem;
+        font-size: 2.75rem;
     }
     
     p {
@@ -623,19 +635,19 @@ span {
     }
     
     p.small-text {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
     
     p.medium-text {
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
     
     p.big-text {
-        font-size: 1.15rem;
+        font-size: 1.3rem;
     }
 
     a {
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
     
     #header {
@@ -643,7 +655,7 @@ span {
     }
     
     #header li {
-        margin-left: 3rem;
+        margin-left: 2rem;
     }
     
     #header a[href="#explore"] {
@@ -655,19 +667,19 @@ span {
         height: 15.625rem;
     }
     
-    .carousel .tour-description {
+    .carousel .tour {
         padding: 2.5rem var(--main-content-side-margin);
     }
     
-    .carousel .tour-description h2 {
+    .carousel .tour h2 {
         margin: 2.5rem 0 0.25rem 0;
     }
     
-    .carousel .tour-description h3 {
+    .carousel .tour h3 {
         margin-bottom: 0.3rem;
     }
     
-    .carousel .tour-description p {
+    .carousel .tour p {
         margin-top: 4vh;
     }
 
@@ -728,6 +740,316 @@ span {
         width: 5.5rem;
         height: 3.25rem;
         font-size: 1.25rem;
+        margin: 0.6rem 0 0 0;
+    }
+    
+    #contact-details > h3 {
+        margin: 0.3rem 0;
+    }
+    
+    #footer li {
+        margin-left: 3.125rem;
+    }
+    
+    #footer a[href="#contact"] {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    section {
+        min-height: 45rem;
+    }
+    
+    h1 {
+        font-size: 5rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    .h2-big {
+        font-size: 2.75rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .h3-big {
+        font-size: 1.75rem;
+    }
+    
+    p {
+        text-indent: 1.5rem;
+        line-height: 1.5rem;
+    }
+    
+    p.small-text {
+        font-size: 0.75rem;
+    }
+    
+    p.medium-text {
+        font-size: 1rem;
+    }
+    
+    p.big-text {
+        font-size: 1.25rem;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+    
+    #header {
+        height: 3rem;
+    }
+    
+    #header li {
+        margin-left: 1.75rem;
+    }
+    
+    #header a[href="#explore"] {
+        display: none;
+    }
+    
+    .guide-card img {
+        width: 15.625rem;
+        height: 15.625rem;
+    }
+    
+    .carousel .tour {
+        padding: 2.5rem var(--main-content-side-margin);
+    }
+    
+    .carousel .tour h2 {
+        margin: 2.5rem 0 0.25rem 0;
+    }
+    
+    .carousel .tour h3 {
+        margin-bottom: 0.3rem;
+    }
+    
+    .carousel .tour p {
+        margin-top: 4vh;
+    }
+
+    #additions {
+        min-height: 30rem;
+    }
+
+    #additions .additions-header {
+        height: 10%;
+    }
+
+    #additions .additions {
+        flex-direction: column;
+        justify-content: space-between;
+        list-style-type: none;
+        height: 75%;
+        width: auto;
+        margin: 0 var(--main-content-side-margin);
+    }
+
+    #additions .addition {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+    }
+    
+    #additions .icon {
+        width: 6rem;
+        height: 6rem;
+        margin: auto 1.5rem auto 0;
+    }
+
+    #additions .icon-description {
+        margin: auto 0;
+        width: 75%;
+    }
+    
+    #contact .contact-header {
+        padding-top: 0.5rem;
+        height: 7rem;
+    }
+
+    #contact-form > input,
+    #contact-form > #input-message {
+        height: 2.5rem;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    #contact-form > #input-message {
+        height: 12rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    #contact-form > #input-submit {
+        width: 5.5rem;
+        height: 3.25rem;
+        font-size: 1.25rem;
+        margin: 0.6rem 0 0 0;
+    }
+    
+    #contact-details > h3 {
+        margin: 0.3rem 0;
+    }
+    
+    #footer {
+        height: 3rem;
+        padding-top: 0.5rem;
+    }
+    
+    #footer li {
+        margin-left: 3.125rem;
+    }
+    
+    #footer a[href="#contact"] {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+    section {
+        min-height: 30rem;
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .h2-big {
+        font-size: 2.25rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .h3-big {
+        font-size: 1.75rem;
+    }
+    
+    p {
+        line-height: 1.15rem;
+    }
+    
+    p.small-text {
+        font-size: 0.5rem;
+    }
+    
+    p.medium-text {
+        font-size: 0.75rem;
+    }
+    
+    p.big-text {
+        font-size: 1rem;
+    }
+
+    a {
+        font-size: 0.75rem;
+    }
+    
+    #header {
+        height: 3rem;
+    }
+    
+    #header li {
+        margin-left: 1rem;
+    }
+    
+    #header a[href="#explore"] {
+        display: none;
+    }
+    
+    .guide-card img {
+        width: 10rem;
+        height: 10rem;
+    }
+    
+    .carousel .tour {
+        padding: 2.5rem var(--secondary-content-side-margin);
+    }
+    
+    .carousel .tour h2 {
+        margin: 1.25rem 0 0.25rem 0;
+    }
+    
+    .carousel .tour h3 {
+        margin-bottom: 0.2rem;
+    }
+    
+    .carousel .tour p {
+        margin-top: 2vh;
+    }
+
+    #additions {
+        min-height: 30rem;
+    }
+
+    #additions .additions-header {
+        height: 10%;
+    }
+
+    #additions .additions {
+        flex-direction: column;
+        justify-content: space-between;
+        list-style-type: none;
+        height: 75%;
+        width: auto;
+        margin: 0 var(--main-content-side-margin);
+    }
+
+    #additions .addition {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+    }
+    
+    #additions .icon {
+        width: 6rem;
+        height: 6rem;
+        margin: auto 1.5rem auto 0;
+    }
+
+    #additions .icon-description {
+        margin: auto 0;
+        width: 75%;
+    }
+    
+    #contact .contact-header {
+        padding-top: 0.5rem;
+        height: 6rem;
+    }
+
+    #contact-form > input,
+    #contact-form > #input-message {
+        height: 1.65rem;
+        margin: 0.5rem 0;
+        font-size: 0.8rem;
+        padding: 0 0.5rem;
+    }
+    
+    #contact-form > #input-message {
+        height: 6rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    #contact-form > #input-submit {
+        width: 4.75rem;
+        height: 2.55rem;
+        font-size: 0.85rem;
         margin: 0.6rem 0 0 0;
     }
     
