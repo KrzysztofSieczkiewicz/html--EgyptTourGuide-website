@@ -298,7 +298,7 @@ span {
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    --height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0));
     color: var(--main-color-1);
 }
@@ -439,7 +439,7 @@ span {
     position: absolute;
     bottom: 0;
     width: 88%;
-    margin: 0 11%;
+    margin: 0 6%;
     z-index: 90;
     height: 3.5rem;
     padding-top: 0.65rem;
@@ -462,6 +462,7 @@ span {
 
 #footer li {
     float: left;
+    margin-left: 1rem;
 }
     
 #footer .nav-link {
@@ -917,7 +918,7 @@ span {
 @media (min-width: 600px) and (max-width: 767px) {
 
     section {
-        min-height: 30rem;
+        min-height: 32.5rem;
     }
     
     h1 {
@@ -1033,6 +1034,23 @@ span {
         height: 6rem;
     }
 
+    #contact .contact-contents {
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    #contact #contact-details {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #contact-form {
+        width: 70%;
+        margin: 0 auto;
+    }
+
     #contact-form > input,
     #contact-form > #input-message {
         height: 1.65rem;
@@ -1058,15 +1076,362 @@ span {
     }
     
     #footer {
+        display: none;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 599px) {
+
+    section {
+        min-height: 30rem;
+    }
+    
+    h1 {
+        font-size: 4.5rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .h2-big {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .h3-big {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        line-height: 1.25rem;
+    }
+    
+    p.small-text {
+        font-size: 0.75rem;
+    }
+    
+    p.medium-text {
+        font-size: 0.9rem;
+    }
+    
+    p.big-text {
+        font-size: 1.15rem;
+    }
+
+    a {
+        font-size: 0.85rem;
+    }
+    
+    #header {
+        margin-top: 0.75rem;
         height: 3rem;
-        padding-top: 0.5rem;
+    }
+
+    #header .navbar {
+        display: none;
     }
     
-    #footer li {
-        margin-left: 3.125rem;
+    .guide-card img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .carousel h1 {
+        padding: 0 30%;
     }
     
-    #footer a[href="#contact"] {
+    .carousel .tour {
+        padding: 2.5rem var(--secondary-content-side-margin);
+    }
+    
+    .carousel .tour h2 {
+        margin: 1.25rem 0 0.25rem 0;
+    }
+    
+    .carousel .tour h3 {
+        margin-bottom: 0.2rem;
+    }
+    
+    .carousel .tour p {
+        margin-top: 2vh;
+    }
+
+    #additions {
+        min-height: 30rem;
+    }
+
+    #additions .additions-header {
+        height: 10%;
+    }
+
+    #additions .additions {
+        flex-direction: column;
+        justify-content: space-between;
+        list-style-type: none;
+        height: 75%;
+        width: auto;
+        margin: 0 var(--main-content-side-margin);
+    }
+
+    #additions .addition {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: 0.15rem auto;
+    }
+    
+    #additions .icon {
+        width: 6rem;
+        height: 6rem;
+        margin: auto 1.5rem auto 0;
+    }
+
+    #additions .icon-description {
+        margin: auto 0;
+        width: 75%;
+    }
+    
+    #contact .contact-header {
+        padding-top: 2rem;
+        height: 7.5rem;
+    }
+
+    #contact .contact-contents {
+        flex-direction: column;
+    }
+
+    #contact #contact-details {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #contact-form {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #contact-form > input,
+    #contact-form > #input-message {
+        height: 1.65rem;
+        margin: 0.5rem 0;
+        font-size: 0.8rem;
+        padding: 0 0.5rem;
+    }
+    
+    #contact-form > #input-message {
+        height: 6rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    #contact-form > #input-submit {
+        width: 4.75rem;
+        height: 2.55rem;
+        font-size: 0.85rem;
+        margin: 0.6rem 0 0 0;
+    }
+    
+    #contact-details > h3 {
+        margin: 0.3rem 0;
+    }
+    
+    #footer {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    section {
+        height: auto;
+        max-height: fit-content;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .h2-big {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .h3-big {
+        font-size: 1.15rem;
+    }
+    
+    p {
+        line-height: 1.15rem;
+    }
+    
+    p.small-text {
+        font-size: 0.65rem;
+    }
+    
+    p.medium-text {
+        font-size: 0.85rem;
+    }
+    
+    p.big-text {
+        font-size: 1.15rem;
+    }
+
+    a {
+        font-size: 0.75rem;
+    }
+    
+    #header {
+        margin-top: 0.45rem;
+        height: 2rem;
+    }
+
+    #header .navbar {
+        display: none;
+    }
+
+    .carousel h1 {
+        padding: 0 30%;
+    }
+
+    .guide-card {
+        flex-direction: column;
+    }
+
+    .guide-card > div {
+        width: 100%;
+        line-height: 2rem;
+        white-space: nowrap;
+        z-index: 7;
+    }
+
+    .guide-card .stars {
+        display: none;
+    }
+    
+    .guide-card img {
+        width: 12rem;
+        height: 12rem;
+        margin: 0 auto;
+    }
+
+    #tours {
+        --min-height: 45rem;
+    }
+
+    .guide-description {
+        margin: 2% var(--secondary-content-side-margin);
+    }
+    
+    .carousel .tour {
+        padding: 2.5rem var(--secondary-content-side-margin);
+    }
+    
+    .carousel .tour h2 {
+        margin: 1.25rem 0 0.25rem 0;
+    }
+    
+    .carousel .tour h3 {
+        margin-bottom: 0.2rem;
+    }
+    
+    .carousel .tour p {
+        margin-top: 2vh;
+    }
+
+    #additions {
+        min-height: 30rem;
+        height: auto;
+    }
+
+    #additions .additions-header {
+        height: 10%;
+    }
+
+    #additions .additions {
+        flex-direction: column;
+        justify-content: space-between;
+        list-style-type: none;
+        height: 75%;
+        width: auto;
+        margin: 0 var(--secondary-content-side-margin);
+    }
+
+    #additions .addition {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: 25px auto;
+    }
+    
+    #additions .icon {
+        width: 4rem;
+        height: 4rem;
+        margin: auto 1rem auto 0;
+    }
+
+    #additions .icon-description {
+        margin: auto 0;
+        width: 75%;
+    }
+    
+    #contact .contact-header {
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        height: 8rem;
+        padding: 10%;
+    }
+
+    #contact .contact-contents {
+        flex-direction: column;
+    }
+
+    #contact #contact-details {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #contact-form {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #contact-form > input,
+    #contact-form > #input-message {
+        height: 1.65rem;
+        margin: 0.5rem 0;
+        font-size: 0.8rem;
+        padding: 0 0.5rem;
+    }
+    
+    #contact-form > #input-message {
+        height: 6rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    #contact-form > #input-submit {
+        width: 4.75rem;
+        height: 2.55rem;
+        font-size: 0.85rem;
+        margin: 0.6rem 0 0 0;
+    }
+    
+    #contact-details > h3 {
+        margin: 0.3rem 0;
+    }
+    
+    #footer {
         display: none;
     }
 }
