@@ -140,7 +140,7 @@ span {
     height: clamp(6.25rem, 10vh, 9.375rem); 
     background-color: transparent;
     fill: var(--main-color-1);
-    bottom: 0;
+    bottom: -5px;
     z-index: 20;
 }
 
