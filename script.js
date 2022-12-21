@@ -1,4 +1,9 @@
 // SMOOTH SCROLLING
+const sections = document.getElementsByTagName('section')
+const navButtons = document.querySelectorAll(".nav-link")
+var sectionIndex = 0;
+var isScrolling = false;
+
 function changeSection(offset) {
     sectionIndex = sectionIndex + offset
 
@@ -17,46 +22,57 @@ function changeSection(offset) {
     }, 300)
 };
 
-function preventDefaultEvents() {
-    function preventDefault(e) {
-        e.preventDefault();
-    }
-
-    function preventDefaultForScrollKeys(e) {
-        try {
-            if (keys[e.keyCode]) {
-            preventDefault(e);
-            return false;
-            }
-        } catch(e) {}
-    }
-
-    var supportsPassive = false;
-    try {
-    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-        get: function () { supportsPassive = true; } 
-    }));
-    } catch(e) {}
-    var wheelOpt = supportsPassive ? { passive: false } : false;
-
-    window.addEventListener('wheel', preventDefault, wheelOpt)
-    //window.addEventListener('DOMMouseScroll', preventDefault, false)
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+function preventDefault(e) {
+    e.preventDefault();
 }
+
+function preventDefaultForScrollKeys(e) {
+    try {
+        if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+        }
+    } catch(e) {}
+}
+
+var supportsPassive = false;
+try {
+window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+}));
+} catch(e) {}
+var wheelOpt = supportsPassive ? { passive: false } : false;
 
 history.scrollRestoration = "manual";
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
 
-preventDefaultEvents()
+window.addEventListener('resize', () => {
+    const sectionExplore = document.querySelector('#explore')
+    const exploreStyle = window.getComputedStyle(sectionExplore)
+    const heigthRule = exploreStyle.getPropertyValue('min-height')
+    const minHeight = heigthRule.replace('px', '');
 
-const sections = document.getElementsByTagName('section')
-const navButtons = document.querySelectorAll(".nav-link")
-var sectionIndex = 0;
-var isScrolling = false;
+    console.log(minHeight)
+    console.log(window.innerHeight)
 
-window.addEventListener('wheel', ({ deltaY }) => {
+    if (window.innerHeight >= minHeight) {
+        console.log('Im high enough')
+        window.addEventListener('wheel', preventDefault, wheelOpt)
+        window.addEventListener('DOMMouseScroll', preventDefault, false)
+        window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+    }
+    if (window.innerHeight < minHeight) {
+        console.log('Im not high enough')
+        window.removeEventListener('wheel', preventDefault, wheelOpt)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false)
+        window.removeEventListener('keydown', preventDefaultForScrollKeys, false)
+
+    }
+  });
+
+  window.addEventListener('wheel', ({ deltaY }) => {
     const delta = Math.sign(deltaY)
 
     if(!isScrolling) {
@@ -80,10 +96,16 @@ navButtons.forEach(button => {
 })
 
 // CAROUSELS
-function nextSlide() {
+const carousels = document.querySelectorAll(".carousel")
+const buttons = document.querySelectorAll("[data-carousel-button]")
+const interval = 6000
+
+let nextSlideInterval = window.setInterval(nextSlide, interval)
+
+function nextSlide() { // function purely made for interval slide switching on first carousel
     const offset = 1
-    const slides = document.querySelector("[data-slides]")
-    const activeSlide = document.querySelector("[data-active]")
+    const slides = document.querySelector("#explore [data-slides]")
+    const activeSlide = document.querySelector("#explore [data-active]")
 
     let newIndex = [...slides.children].indexOf(activeSlide) + offset
 
@@ -94,33 +116,57 @@ function nextSlide() {
     delete activeSlide.dataset.active
 }
 
+function changeSlide(offset, carousel) { // function for proper slide change
+    const slides = carousel
+        .closest("[data-carousel]")
+        .querySelector("[data-slides]")
+    const activeSlide = slides.querySelector("[data-active]")
 
-const buttons = document.querySelectorAll("[data-carousel-button]")
-const interval = 6000
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset
+
+    if(newIndex < 0) newIndex = slides.children.length - 1
+    if(newIndex >= slides.children.length) newIndex = 0
+
+    slides.children[newIndex].dataset.active = true
+    delete activeSlide.dataset.active
+}
 
 buttons.forEach(button => {
+    const carousel = button
+        .closest("[data-carousel]")
+
     button.addEventListener("click", () => {
         const offset = button.dataset.carouselButton === "next" ? 1 : -1
-        const slides = button
-            .closest("[data-carousel]")
-            .querySelector("[data-slides]")
 
-        const activeSlide = slides.querySelector("[data-active]")
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset
-
-        if(newIndex < 0) newIndex = slides.children.length - 1
-        if(newIndex >= slides.children.length) newIndex = 0
-
-        slides.children[newIndex].dataset.active = true
-        delete activeSlide.dataset.active
+        changeSlide(offset, carousel)
 
         clearInterval(nextSlideInterval)
         nextSlideInterval = setInterval(nextSlide, interval)
     })
 })
 
-let nextSlideInterval = window.setInterval(nextSlide, interval)
+carousels.forEach(carousel => {
+    let startX
+    let endX
+    let swipeDistance
 
+    carousel.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchmove', (event) => {
+        endX = event.touches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', (event) => {
+        swipeDistance = endX - startX;
+
+        if (swipeDistance < -75) {
+            changeSlide(1, carousel)
+        }
+        if (swipeDistance > 75) {
+            changeSlide(-1, carousel)
+        }
+    }, { passive: true })
+})
 
 // FORM VALIDATION
 const formElement = document.querySelector('#contact-form')
@@ -147,8 +193,6 @@ function validateForm() {
         }
     }
 }
-
-
 
 
 // FORM SENDING
