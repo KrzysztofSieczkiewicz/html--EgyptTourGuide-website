@@ -54,17 +54,12 @@ window.addEventListener('resize', () => {
     const heigthRule = exploreStyle.getPropertyValue('min-height')
     const minHeight = heigthRule.replace('px', '');
 
-    console.log(minHeight)
-    console.log(window.innerHeight)
-
     if (window.innerHeight >= minHeight) {
-        console.log('Im high enough')
         window.addEventListener('wheel', preventDefault, wheelOpt)
         window.addEventListener('DOMMouseScroll', preventDefault, false)
         window.addEventListener('keydown', preventDefaultForScrollKeys, false)
     }
     if (window.innerHeight < minHeight) {
-        console.log('Im not high enough')
         window.removeEventListener('wheel', preventDefault, wheelOpt)
         window.removeEventListener('DOMMouseScroll', preventDefault, false)
         window.removeEventListener('keydown', preventDefaultForScrollKeys, false)
@@ -72,7 +67,7 @@ window.addEventListener('resize', () => {
     }
   });
 
-  window.addEventListener('wheel', ({ deltaY }) => {
+window.addEventListener('wheel', ({ deltaY }) => {
     const delta = Math.sign(deltaY)
 
     if(!isScrolling) {
@@ -197,7 +192,7 @@ function validateForm() {
 
 // FORM SENDING
 function initEmailJs() {
-    emailjs.init('4_E4dGEoYe0BXMYvT');
+    emailjs.init('KzLARgigEwn3HADvZ');
 };
 
 
@@ -208,12 +203,12 @@ window.onload = function() {
         event.preventDefault();
         
         if(validateForm()) {
-            emailjs.sendForm('service_s4l9xsk', 'template_tmwy3nr', formElement)
+            emailjs.sendForm('service_g8s9ass', 'template_3z4fvzo', formElement)
                 .then(function() {
                     formElement.reset();
                     alert("Message sent succesfully. We'll contact you as soon as possible");
-                    console.log('SUCCESS!');
                 }, function(error) {
+                    alert("We are very sorry, something went wrong with sending this message");
                     console.log('FAILED...', error);
                 });
         }

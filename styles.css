@@ -483,10 +483,6 @@ span {
     .navbar li {
         margin-left: 3rem;
     }
-    
-    #header a[href="#explore"] {
-        display: none;
-    }
 
     .surname {
         font-size: 6rem;
@@ -550,10 +546,6 @@ span {
     .navbar li {
         margin-left: 3.125rem;
     }
-    
-    #footer a[href="#contact"] {
-        display: none;
-    }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -595,10 +587,6 @@ span {
     
     .navbar li {
         margin-left: 2rem;
-    }
-    
-    #header a[href="#explore"] {
-        display: none;
     }
     
     .surname {
@@ -693,10 +681,6 @@ span {
     .navbar li {
         margin-left: 3.125rem;
     }
-    
-    #footer a[href="#contact"] {
-        display: none;
-    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -737,10 +721,6 @@ span {
     
     .navbar li {
         margin-left: 1rem;
-    }
-    
-    #header a[href="#explore"] {
-        display: none;
     }
 
     .surname {
@@ -840,10 +820,6 @@ span {
     .navbar li {
         margin-left: 3.125rem;
     }
-    
-    #footer a[href="#contact"] {
-        display: none;
-    }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -884,10 +860,6 @@ span {
     
     .navbar li {
         margin-left: 0.65rem;
-    }
-    
-    #header a[href="#explore"] {
-        display: none;
     }
 
     .surname {
