@@ -433,16 +433,16 @@ span {
 }
 
 #footer .navbar {
-    width: 60vw;
+    width: 100%;
     margin: 0 auto;
 }
 
 #footer .navbar ul {
-    justify-content: center;
+    justify-content: right;
 }
 
 .navbar li {
-    float: left;
+    float: right;
     margin-left: 1rem;
 }
 
