@@ -13,6 +13,7 @@
 }
 
 body {
+    min-width: 400px;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -358,6 +359,7 @@ span {
 
 .contact-header > p {
     margin: 0;
+    padding: 0 7.5%;
 }
 
 .contact-contents {
@@ -431,16 +433,16 @@ span {
 }
 
 #footer .navbar {
-    width: 60vw;
+    width: 100%;
     margin: 0 auto;
 }
 
 #footer .navbar ul {
-    justify-content: center;
+    justify-content: right;
 }
 
 .navbar li {
-    float: left;
+    float: right;
     margin-left: 1rem;
 }
 
@@ -978,7 +980,6 @@ span {
 @media (max-width: 479px) {
 
     body {
-        min-width: 420px;
         overflow-x: scroll;
     }
 

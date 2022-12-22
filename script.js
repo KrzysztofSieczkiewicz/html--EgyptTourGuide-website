@@ -67,6 +67,10 @@ window.addEventListener('resize', () => {
     }
   });
 
+window.addEventListener('wheel', preventDefault, wheelOpt)
+window.addEventListener('DOMMouseScroll', preventDefault, false)
+window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+
 window.addEventListener('wheel', ({ deltaY }) => {
     const delta = Math.sign(deltaY)
 
