@@ -9,7 +9,8 @@ Main goal was to create clear site showing possible tours and showing Hassan cap
 Due to Egyptian internet limitations additional goal was to minimise page weight. Website is created with HTML/CSS/JS
 Current version can be visited on:
 https://krzysztofsieczkiewicz.github.io/EgyptTourGuide-website/
-Independent from Hassan private hosting
+After changes for XMLParser on Blogger it is (as per 03.01.2023) hosted on:
+https://hassantours.blogspot.com/
 
 ////////////////// Contact form
 
