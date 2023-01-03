@@ -48,6 +48,10 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
 
+window.addEventListener('wheel', preventDefault, wheelOpt)
+window.addEventListener('DOMMouseScroll', preventDefault, false)
+window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+
 window.addEventListener('resize', () => {
     const sectionExplore = document.querySelector('#explore')
     const exploreStyle = window.getComputedStyle(sectionExplore)
@@ -66,10 +70,6 @@ window.addEventListener('resize', () => {
 
     }
   });
-
-window.addEventListener('wheel', preventDefault, wheelOpt)
-window.addEventListener('DOMMouseScroll', preventDefault, false)
-window.addEventListener('keydown', preventDefaultForScrollKeys, false)
 
 window.addEventListener('wheel', ({ deltaY }) => {
     const delta = Math.sign(deltaY)
