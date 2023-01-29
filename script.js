@@ -48,9 +48,11 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
 
-window.addEventListener('wheel', preventDefault, wheelOpt)
-window.addEventListener('DOMMouseScroll', preventDefault, false)
-window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+if (window.innerHeight >= minHeight) {
+    window.addEventListener('wheel', preventDefault, wheelOpt)
+    window.addEventListener('DOMMouseScroll', preventDefault, false)
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+}
 
 window.addEventListener('resize', () => {
     const sectionExplore = document.querySelector('#explore')
