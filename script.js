@@ -48,9 +48,21 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
 
-window.addEventListener('wheel', preventDefault, wheelOpt)
-window.addEventListener('DOMMouseScroll', preventDefault, false)
-window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+const initSectionExplore = document.querySelector('#explore')
+const initExploreStyle = window.getComputedStyle(initSectionExplore)
+const initHeigthRule = initExploreStyle.getPropertyValue('min-height')
+const initMinHeight = initHeigthRule.replace('px', '');
+  
+if (window.innerHeight >= initMinHeight) {
+    window.addEventListener('wheel', preventDefault, wheelOpt)
+    window.addEventListener('DOMMouseScroll', preventDefault, false)
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+}
+if (window.innerHeight < initHeigthRule) {
+    window.removeEventListener('wheel', preventDefault, wheelOpt)
+    window.removeEventListener('DOMMouseScroll', preventDefault, false)
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false)
+}
 
 window.addEventListener('resize', () => {
     const sectionExplore = document.querySelector('#explore')
