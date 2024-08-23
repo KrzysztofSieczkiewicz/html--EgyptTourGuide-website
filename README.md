@@ -7,9 +7,7 @@ A single-page website created for Egyptian tour guide based in Luxor
 Single-page website made for Egyptian Tour Guide named Hassan.
 Main goal was to create clear site showing possible tours and showing Hassan capabilities as tour (especially in terms of building trust)
 Due to Egyptian internet limitations additional goal was to minimise page weight. Website is created with HTML/CSS/JS
-Current version can be visited on:
-https://krzysztofsieczkiewicz.github.io/EgyptTourGuide-website/
-After changes for XMLParser on Blogger it is (as per 03.01.2023) hosted on:
+After changes for XMLParser on Blogger it is (as per 23.08.2023) hosted on:
 https://hassantours.blogspot.com/
 
 ////////////////// Contact form
